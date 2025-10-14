@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — PAPI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="index.html">PAPI</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container projects-page">
+    <h1 data-aos="fade-up">Projects</h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="150">A selection of projects I’ve built. Click any card to open the live demo or repository.</p>
+
+    <div class="projects-grid" data-aos="fade-up" data-aos-delay="250">
+      <!-- Project item example -->
+      <article class="project-card">
+        <img src="https://placehold.co/600x400?text=Melanin+Hospital" alt="Melanin Hospital" />
+        <div class="project-body">
+          <h4>Melanin Hospital</h4>
+          <p>Healthcare site — landing & resources.</p>
+          <div class="project-links">
+            <a class="btn small" href="https://melanin-hosptal.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn small btn-outline" href="#">View Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Add more projects here -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year3"></span> PAPI</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3/tsparticles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
