@@ -6,6 +6,7 @@
   <title>Home — PAPI</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
   <div id="particles-js"></div>
@@ -21,7 +22,19 @@
       </ul>
       <div class="nav-actions">
         <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-        <button class="menu-btn" aria-label="Open menu">☰</button>
+      
+        <div class="dropdown-content">
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Menu
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="contact.html">📞 Contact Page</a></li>
+    <li><a class="dropdown-item" href="#">✉️ Email Us</a></li>
+    <li><a class="dropdown-item" href="#">📱 Call Us</a></li>
+  </ul>
+</div>
+    </div>
       </div>
     </nav>
   </header>
@@ -110,6 +123,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3/tsparticles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 </html>
