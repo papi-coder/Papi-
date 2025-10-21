@@ -6,7 +6,89 @@
   <title>Projects — PAPI</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* === CAROUSEL STYLES === */
+    .carousel-section {
+      margin: 80px auto;
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--card-bg, rgba(255,255,255,0.05));
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .carousel-section h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: var(--text, #fff);
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      border-radius: 16px;
+      flex-shrink: 0;
+      object-fit: cover;
+      height: 450px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .prev {
+      left: 15px;
+    }
+
+    .next {
+      right: 15px;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .carousel-slide img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-section h2 {
+        font-size: 1.6rem;
+      }
+      .carousel-slide img {
+        height: 220px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div id="particles-js"></div>
   <header class="nav-wrap">
@@ -26,7 +108,9 @@
 
   <main class="container projects-page">
     <h1 data-aos="fade-up">Projects</h1>
-    <p class="lead" data-aos="fade-up" data-aos-delay="150">A selection of projects I’ve built. Click any card to open the live demo or repository.</p>
+    <p class="lead" data-aos="fade-up" data-aos-delay="150">
+      A selection of projects I’ve built. Click any card to open the live demo or repository.
+    </p>
 
     <div class="projects-grid" data-aos="fade-up" data-aos-delay="250">
       <!-- Project item example -->
@@ -41,9 +125,25 @@
           </div>
         </div>
       </article>
-
-      <!-- Add more projects here -->
     </div>
+
+    <!-- === GRAPHIC DESIGN CAROUSEL SECTION === -->
+    <section class="carousel-section" data-aos="fade-up" data-aos-delay="300">
+      <h2>🎨 Graphic Designs</h2>
+      <div class="carousel-container">
+        <div class="carousel-slide" id="carouselSlide">
+          <!-- Replace these with your own design images -->
+           <img src="imgs/design1.jpg" alt="Design 1">
+<img src="/IMAGES/advertisement flyer.jpg" alt="Design 2">
+<img src="/IMAGES/El’s Luxe.jpg" alt="Design 3">
+<img src="/IMAGES/Sista Adwoa’s Luxe Bags jpeg.jpg" alt="Design 4">
+
+       
+        </div>
+        <button class="carousel-btn prev" id="prevBtn">❮</button>
+        <button class="carousel-btn next" id="nextBtn">❯</button>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -53,7 +153,34 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // === Simple Carousel Script ===
+    const slide = document.getElementById('carouselSlide');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    let counter = 0;
+
+    nextBtn.addEventListener('click', () => {
+      counter = (counter + 1) % slide.children.length;
+      slide.style.transform = `translateX(-${counter * 100}%)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      counter = (counter - 1 + slide.children.length) % slide.children.length;
+      slide.style.transform = `translateX(-${counter * 100}%)`;
+    });
+
+    // Auto-slide every 5s
+    setInterval(() => {
+      counter = (counter + 1) % slide.children.length;
+      slide.style.transform = `translateX(-${counter * 100}%)`;
+    }, 5000);
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3/tsparticles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
