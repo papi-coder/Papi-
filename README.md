@@ -1,0 +1,188 @@
+
+# Papi-
+portfolio website
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — PAPI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="index.html">PAPI</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Menu
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="contact.html">📞 Contact Page</a></li>
+    <li><a class="dropdown-item" href="mailto:solopappy76@gmail.com">✉️ Email Us</a></li>
+    <li><a class="dropdown-item" href="tel:+233541190485">📱 Call Us</a></li>
+  </ul>
+</div>
+
+    </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-left" data-aos="fade-right">
+        <h1>Hi, I'm <span class="accent">PAPI</span></h1>
+        <h2 class="typewriter" data-words='["A Creative Developer.", "A UI/UX Lover.", "A Problem Solver."]'></h2>
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">I build futuristic, accessible web experiences — focused on performance and delightful interactions.</p>
+        <div class="hero-ctas" data-aos="fade-up" data-aos-delay="350">
+          <a class="btn" href="projects.html">View My Work</a>
+          <a class="btn btn-outline" href="about.html">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="fade-left">
+        <div class="card glass">
+          <h3>Featured</h3>
+          <p>Interactive Portfolio — network particles, AOS, typewriter, dark mode.</p>
+          <a class="small-link" href="projects.html">See projects →</a>
+        </div>
+
+        
+
+        <div class="stats">
+          <div class="stat" data-aos="zoom-in" data-aos-delay="450">
+            <strong>Few </strong>
+            <span>Years Experience</span>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="550">
+            <strong>30+</strong>
+            <span>Projects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills container" data-aos="fade-up">
+      <h3>Skills</h3>
+      <div class="skill-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS (Flexbox, Grid)</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">UX Design</div>
+      </div>
+    </section>
+
+
+    <!-- Graphic Designs Carousel -->
+<section class="container my-5" data-aos="fade-up">
+  <h3 class="text-center mb-4">🎨 Graphic Designs</h3>
+  <div id="designCarousel" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-inner rounded-4 shadow-lg">
+      <div class="carousel-item active">
+        <img src="/IMAGES/advertisement flyer.jpg" class="d-block w-100" alt="Design 1">
+      </div>
+      <div class="carousel-item">
+        <img src="/IMAGES/El’s Luxe.jpg" class="d-block w-100" alt="Design 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/IMAGES/Sista Adwoa’s Luxe Bags jpeg.jpg" class="d-block w-100" alt="Design 3">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#designCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#designCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#designCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#designCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#designCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="projects-row">
+        <article class="project-card" data-aos="flip-left">
+          <img src="https://placehold.co/600x400?text=Project+1" alt="project 1" />
+          <h4>Melanin Hospital (Live)</h4>
+          <p>Healthcare landing site. Live demo available.</p>
+          <div class="project-links">
+            <a class="btn small" href="https://melanin-hosptal.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn small btn-outline" href="#">View Code</a>
+          </div>
+        </article>
+
+        
+
+        <article class="project-card" data-aos="flip-right">
+          <img src="https://placehold.co/600x400?text=Project+2" alt="project 2" />
+          <h4>Project Two</h4>
+          <p>Interactive UI concept.</p>
+          <div class="project-links">
+            <a class="btn small" href="#">Live Demo</a>
+            <a class="btn small btn-outline" href="#">View Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> PAPI — Built with ❤️</p>
+    
+    <div class="socials">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="solopappy76@gmail.com">✉️ Email Us</a>
+      <a href="tel:+233541190485">📱 Call Us</a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3/tsparticles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

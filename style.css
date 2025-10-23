@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a82e4cc964392c8c4f50e35dcd5b3804144f688
 :root{
   --bg:#0b0f1a; --card:#0f1724; --muted:#9aa4b2; --accent:linear-gradient(90deg,#7b61ff,#00d4ff);
   --glass: rgba(255,255,255,0.03);
@@ -122,4 +125,8 @@ body.dark-mode .nav-links a:hover {
 /* Optional glowing hover effect */
 .dropdown-menu .dropdown-item:hover {
   animation: glow 1.5s infinite alternate;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9a82e4cc964392c8c4f50e35dcd5b3804144f688
