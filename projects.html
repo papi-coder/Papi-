@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a82e4cc964392c8c4f50e35dcd5b3804144f688
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — PAPI</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -17,9 +15,9 @@
       margin: 80px auto;
       text-align: center;
       padding: 40px 20px;
-      background: var(--card-bg, rgba(255,255,255,0.05));
+      background: var(--card-bg, rgba(255, 255, 255, 0.05));
       border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
     .carousel-section h2 {
@@ -53,7 +51,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       border: none;
       color: white;
       font-size: 24px;
@@ -61,10 +59,11 @@
       cursor: pointer;
       border-radius: 50%;
       transition: background 0.3s;
+      z-index: 10;
     }
 
     .carousel-btn:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .prev {
@@ -95,6 +94,8 @@
 
 <body>
   <div id="particles-js"></div>
+
+  <!-- HEADER -->
   <header class="nav-wrap">
     <nav class="nav container">
       <a class="brand" href="index.html">PAPI</a>
@@ -105,11 +106,12 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button id="theme-toggle">🌙</button>
+        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
       </div>
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container projects-page">
     <h1 data-aos="fade-up">Projects</h1>
     <p class="lead" data-aos="fade-up" data-aos-delay="150">
@@ -117,49 +119,47 @@
     </p>
 
     <div class="projects-grid" data-aos="fade-up" data-aos-delay="250">
-      <!-- Project item example -->
-      <article class="project-card">
-        <img src="https://placehold.co/600x400?text=Melanin+Hospital" alt="Melanin Hospital" />
-        <div class="project-body">
-          <h4>Melanin Hospital</h4>
-          <p>Healthcare site — landing & resources.</p>
-          <div class="project-links">
-<<<<<<< HEAD
-            <a class="btn small" href="https://melanin-hosptal.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
-=======
-            <a class="btn small" href="https://melanin-hosptal.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
->>>>>>> 9a82e4cc964392c8c4f50e35dcd5b3804144f688
-            <a class="btn small btn-outline" href="#">View Code</a>
-          </div>
+      <article class="project-card glass" data-aos="flip-left">
+        <img src="/images/img4.jpg" alt="Melanin Hospital" />
+        <h4>Melanin Hospital (Live)</h4>
+        <p>Healthcare landing site with a futuristic interface.</p>
+        <div class="project-links">
+          <a class="btn small glow" href="https://melanin-hosptal.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a class="btn small btn-outline" href="#">View Code</a>
         </div>
       </article>
     </div>
+    <hr>
+    <hr>
 
     <!-- === GRAPHIC DESIGN CAROUSEL SECTION === -->
     <section class="carousel-section" data-aos="fade-up" data-aos-delay="300">
       <h2>🎨 Graphic Designs</h2>
       <div class="carousel-container">
         <div class="carousel-slide" id="carouselSlide">
-          <!-- Replace these with your own design images -->
-           <img src="imgs/design1.jpg" alt="Design 1">
-<img src="/IMAGES/advertisement flyer.jpg" alt="Design 2">
-<img src="/IMAGES/El’s Luxe.jpg" alt="Design 3">
-<img src="/IMAGES/Sista Adwoa’s Luxe Bags jpeg.jpg" alt="Design 4">
-
-       
+          <!-- Replace with your real design images -->
+          <img src="/images/img1.jpg" alt="Design 1">
+          <img src="/images/im2.jpg" alt="Design 2">
+          <img src="/images/img3.jpg" alt="Design 3">
+          <img src="/images/im2.jpg" alt="Design 4">
         </div>
+
         <button class="carousel-btn prev" id="prevBtn">❮</button>
         <button class="carousel-btn next" id="nextBtn">❯</button>
       </div>
     </section>
   </main>
+  <hr>
+  <hr>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year3"></span> PAPI</p>
+      <p>© <span id="year3"></span> PAPI — Built with ❤️</p>
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
@@ -180,7 +180,7 @@
       slide.style.transform = `translateX(-${counter * 100}%)`;
     });
 
-    // Auto-slide every 5s
+    // Auto-slide every 5 seconds
     setInterval(() => {
       counter = (counter + 1) % slide.children.length;
       slide.style.transform = `translateX(-${counter * 100}%)`;
@@ -191,7 +191,4 @@
   <script src="script.js"></script>
 </body>
 </html>
-<<<<<<< HEAD
-=======
 
->>>>>>> 9a82e4cc964392c8c4f50e35dcd5b3804144f688

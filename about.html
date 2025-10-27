@@ -1,61 +1,87 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — PAPI</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- ✨ Particle Background -->
   <div id="particles-js"></div>
-  <header class="nav-wrap">
+
+  <!-- 🌌 Navigation -->
+  <header class="nav-wrap glass">
     <nav class="nav container">
-      <a class="brand" href="index.html">PAPI</a>
+      <a class="brand glow" href="index.html">PAPI</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button id="theme-toggle">🌙</button>
+        <button id="theme-toggle" class="btn small glow" title="Toggle theme">🌙</button>
       </div>
     </nav>
   </header>
 
+  <!-- 🧠 Main Content -->
   <main class="container about-main">
-    <section data-aos="fade-up">
-      <h1>About Me</h1>
-      <p class="lead">I’m a front-end developer who loves building clean, accessible, and highly interactive user experiences. I focus on performance, delightful UI, and pragmatic code.</p>
+    <!-- Hero Intro -->
+    <section class="hero glass" data-aos="fade-up">
+      <h1 class="typewriter">👋 Hey, I’m <span class="accent">PAPI</span></h1>
+       <h2 class="typewriter" data-words='["A Creative Developer.", "A UI/UX Lover.", "A Problem Solver."]'></h2>
+     
     </section>
 
-    <section class="timeline" data-aos="fade-up">
-      <h3>Experience</h3>
+    <!-- Experience Timeline -->
+    <section class="timeline glass" data-aos="fade-up" data-aos-delay="200">
+      <h2>🚀 Experience</h2>
       <div class="timeline-grid">
-      <div class="timeline-item">2025 — 2023: Frontend Developer</div>
+        <div class="timeline-item">
+          <h4>2025 – Present</h4>
+          <p>Frontend Developer at Melanin Hospital</p>
+        </div>
+        <div class="timeline-item">
+          <h4>2023 – 2024</h4>
+          <p>UI/UX Design Intern at VisionTech Studios</p>
+        </div>
       </div>
     </section>
 
-    <section class="tools" data-aos="fade-up">
-      <h3>Tools & Stack</h3>
+    <!-- Tools & Stack -->
+    <section class="tools glass" data-aos="fade-up" data-aos-delay="300">
+      <h2>🛠️ Tools & Stack</h2>
       <div class="tool-list">
-        <span>HTML</span> <hr>
-        <span>CSS</span><hr>
-        <span>JS</span><hr>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        
+        <span>React</span>
+        <span>Git & GitHub</span>
+      
       </div>
     </section>
-
   </main>
 
-  <footer class="site-footer">
+  <!-- ⚡ Footer -->
+  <footer class="site-footer glass">
     <div class="container footer-inner">
-      <p>© <span id="year2"></span> PAPI</p>
+      <p>© <span id="year2"></span> PAPI. Crafted with ❤️ and innovation.</p>
     </div>
   </footer>
 
+  <!-- 🔮 Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3/tsparticles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
