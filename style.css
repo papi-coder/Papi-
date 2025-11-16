@@ -306,6 +306,17 @@ body.dark-mode .nav-links a:hover {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+/* Default = Light mode */
+body {
+  background: #ffffff;
+  color: #000;
+}
+
+/* Dark mode */
+body.dark {
+  background: #0a0a0a;
+  color: #fff;
+}
 
 body {
   font-family: "Poppins", sans-serif;
