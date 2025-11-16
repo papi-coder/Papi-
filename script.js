@@ -260,3 +260,124 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 }); // DOMContentLoaded end
+
+
+// ---------- Ultra Modern 2025 Script ----------
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- Cursor Dot ---------- */
+  const cursor = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', e => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  /* ---------- Sparks on Click/Tap ---------- */
+  const sparkWrap = document.getElementById('sparks');
+  const sparkCount = 12;
+
+  function createSparks(x, y) {
+    for (let i = 0; i < sparkCount; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'spark';
+      spark.style.left = x + 'px';
+      spark.style.top = y + 'px';
+      sparkWrap.appendChild(spark);
+
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * 80 + 20;
+      const vx = Math.cos(angle) * distance;
+      const vy = Math.sin(angle) * distance;
+
+      spark.animate([
+        { transform: `translate(0,0)`, opacity: 1 },
+        { transform: `translate(${vx}px, ${vy}px)`, opacity: 0 }
+      ], {
+        duration: 600,
+        easing: 'ease-out'
+      });
+
+      setTimeout(() => spark.remove(), 600);
+    }
+  }
+
+  document.addEventListener('click', e => createSparks(e.clientX, e.clientY));
+  document.addEventListener('touchstart', e => {
+    const touch = e.touches[0];
+    createSparks(touch.clientX, touch.clientY);
+  });
+
+  /* ---------- Scroll To Top ---------- */
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- Theme Toggle ---------- */
+  const themeToggle = document.querySelectorAll('[data-toggle-theme]');
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  // Load saved theme or system preference
+  const savedTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  setTheme(savedTheme);
+
+  themeToggle.forEach(btn => btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  }));
+
+  /* ---------- Magnetic Buttons ---------- */
+  document.querySelectorAll('button.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width/2;
+      const y = e.clientY - rect.top - rect.height/2;
+      btn.style.transform = `translate(${x*0.2}px, ${y*0.2}px) scale(1.05)`;
+    });
+    btn.addEventListener('mouseleave', () => btn.style.transform = '');
+  });
+
+  /* ---------- Tilt Cards ---------- */
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width/2)/10;
+      const y = (e.clientY - rect.top - rect.height/2)/10;
+      card.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+    card.addEventListener('mouseleave', () => card.style.transform = '');
+  });
+
+});
+/* ---------- Orbit Particles ---------- */
+document.querySelectorAll('.orbit-wrap').forEach(section => {
+  const particles = 6; // number of particles
+  for (let i = 0; i < particles; i++) {
+    const p = document.createElement('div');
+    p.className = 'orbit-particle';
+    p.style.animationDuration = (Math.random()*3 + 2) + 's'; // random speed
+    p.style.transformOrigin = `${40 + Math.random()*20}px center`; // random orbit radius
+    section.appendChild(p);
+  }
+});
+function updateThemeEffects(theme) {
+  // No extra code needed if you use CSS variables or [data-theme] selectors
+  // This will automatically change shimmer & orbit colors
+}
+
+// Update existing theme toggle click handler
+themeToggle.forEach(btn => btn.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const newTheme = current === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+  updateThemeEffects(newTheme);
+}));
+
+// Run on page load
+updateThemeEffects(savedTheme);
