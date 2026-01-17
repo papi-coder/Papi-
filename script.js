@@ -353,33 +353,8 @@ function arcLoop() {
   requestAnimationFrame(arcLoop);
 }
 arcLoop();
-/* 🧠 AUDIO REACTIVE PARTICLES */
-navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-  const audioCtx = new AudioContext();
-  const analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 256;
 
-  const source = audioCtx.createMediaStreamSource(stream);
-  source.connect(analyser);
 
-  const data = new Uint8Array(analyser.frequencyBinCount);
-
-  function audioLoop() {
-    analyser.getByteFrequencyData(data);
-    const avg = data.reduce((a, b) => a + b) / data.length;
-
-    document.documentElement.style.setProperty(
-      "--audio-glow",
-      `${Math.min(avg / 80, 1)}`
-    );
-
-    requestAnimationFrame(audioLoop);
-  }
-
-  audioLoop();
-}).catch(() => {
-  console.log("Mic access denied — audio effects disabled.");
-});
 /* 🧬 THREE.JS DEPTH FIELD */
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000);

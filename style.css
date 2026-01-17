@@ -1996,3 +1996,9 @@ button, a { cursor: pointer; }
     animation: none !important;
   }
 }
+/* === SAFE GLOW (NO AUDIO) === */
+.profile-ellipse {
+  box-shadow:
+    0 0 60px rgba(120,220,255,0.45),
+    0 0 120px rgba(120,220,255,0.25);
+}
