@@ -52,6 +52,26 @@
     </nav>
   </header>
 
+<div id="three-bg"></div>
+<video id="faceCam" autoplay muted playsinline style="display:none"></video>
+<button id="arBtn" class="btn small">🌍 Enter AR</button>
+
+
+
+<!-- Profile FX Core -->
+<div class="profile-fx" id="profileFX">
+  <div class="neon-ring"></div>
+  <canvas id="arc-canvas"></canvas>
+
+
+  <div class="profile-ellipse">
+    <img src="/images/image9.JPG" alt="PAPI Profile Photo">
+  </div>
+</div>
+
+
+
+
   <!-- MAIN CONTENT -->
   <main>
     <!-- HERO -->
@@ -173,12 +193,23 @@
           <img src="/images/image6.jpg" alt="Project 3" />
           <h4>Jowins Engineering Consult</h4>
           <p>Engineering Excellence
-We design, plan, and deliver projects that stand as landmarks of modern construction and sustainable engineering.</p>
+           We design, plan, and deliver projects that stand as landmarks of modern construction 
+           and sustainable engineering.</p>
           <div class="project-links">
             <a class="btn small" href="https://jowins-engineering-consult.vercel.app/">Live Demo</a>
             <a class="btn small btn-outline" href="#">View Code</a>
           </div>
+         
 
+         <article>
+          <img src="/images/img8.jpg" alt="Project 4" />
+          <h4>HUB OF AFFORDABLE DATA</h4>
+          <p>BUY DATA BUNDLE AT A VERY AFFORDABLE PRICE</p>
+          <div class="project-links">
+            <a class="btn small" href="https://cally-s-data.vercel.app/">Live Demo</a>
+            <a class="btn small btn-outline" href="#">View Code</a>
+          </div>
+         </article>
 
 
       </div>
@@ -205,6 +236,22 @@ We design, plan, and deliver projects that stand as landmarks of modern construc
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+
+<!-- Three.js -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+<!-- tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://unpkg.com/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+
+
+
+
+
+
 </body>
 </html>
 

@@ -782,8 +782,8 @@ body {
 /* Glass effect */
 .glass {
   background: var(--glass);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -996,8 +996,8 @@ body {
   transform: translateY(30px);
   pointer-events: none;
   transition: all 0.4s ease;
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 9999;
 }
 
@@ -1032,8 +1032,8 @@ body {
   transform: translateY(40px) scale(0.98);
   pointer-events: none;
   transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   z-index: 9999;
   letter-spacing: 0.3px;
 }
@@ -1974,3 +1974,25 @@ body.loaded .hero { opacity: 1; transform: translateY(0) scale(1); }
 
 /* reduce pointer cursors default (keep UX clean) */
 button, a { cursor: pointer; }
+/* Electric Arc Canvas */
+#arc-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+.profile-ellipse {
+  box-shadow:
+    0 0 calc(80px * var(--audio-glow, 0.5))
+    rgba(120,220,255,0.6);
+}
+#three-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}

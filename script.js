@@ -260,3 +260,172 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 }); // DOMContentLoaded end
+/* ==============================
+   PROFILE INTERACTION ENGINE
+================================ */
+const profile = document.getElementById("profileFX");
+
+if (profile) {
+  // 🧲 Magnetic Hover
+  profile.addEventListener("mousemove", (e) => {
+    const rect = profile.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    profile.style.transform = `
+      translate(${x * 0.08}px, ${y * 0.08}px)
+      rotateX(${(-y / 18)}deg)
+      rotateY(${(x / 18)}deg)
+    `;
+  });
+
+  profile.addEventListener("mouseleave", () => {
+    profile.style.transform = "translate(0,0) rotateX(0) rotateY(0)";
+  });
+
+  // 🎥 Scroll-based Parallax Depth
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    profile.style.transform += ` translateY(${scrollY * 0.04}px)`;
+  });
+}
+tsParticles.load("particles-js", {
+  fullScreen: { enable: false },
+  particles: {
+    number: { value: 40 },
+    color: { value: "#7dd3fc" },
+    move: {
+      enable: true,
+      speed: 1.2,
+      outModes: "bounce",
+      orbit: {
+        enable: true,
+        rotation: {
+          value: 0.8
+        },
+        opacity: 0.7
+      }
+    },
+    size: {
+      value: { min: 1, max: 3 }
+    },
+    opacity: {
+      value: 0.6
+    }
+  }
+});
+/* ⚡ ELECTRIC ARC ENGINE */
+const arcCanvas = document.getElementById("arc-canvas");
+const ctx = arcCanvas.getContext("2d");
+
+function resizeArc() {
+  arcCanvas.width = arcCanvas.offsetWidth;
+  arcCanvas.height = arcCanvas.offsetHeight;
+}
+resizeArc();
+window.addEventListener("resize", resizeArc);
+
+function drawArc(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+
+  const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * 30;
+  const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * 30;
+
+  ctx.quadraticCurveTo(midX, midY, x2, y2);
+  ctx.strokeStyle = "rgba(120,220,255,0.6)";
+  ctx.lineWidth = 1;
+  ctx.shadowBlur = 12;
+  ctx.shadowColor = "#7dd3fc";
+  ctx.stroke();
+}
+
+function arcLoop() {
+  ctx.clearRect(0, 0, arcCanvas.width, arcCanvas.height);
+
+  drawArc(
+    arcCanvas.width / 2,
+    arcCanvas.height / 2,
+    Math.random() * arcCanvas.width,
+    Math.random() * arcCanvas.height
+  );
+
+  requestAnimationFrame(arcLoop);
+}
+arcLoop();
+/* 🧠 AUDIO REACTIVE PARTICLES */
+navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+  const audioCtx = new AudioContext();
+  const analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 256;
+
+  const source = audioCtx.createMediaStreamSource(stream);
+  source.connect(analyser);
+
+  const data = new Uint8Array(analyser.frequencyBinCount);
+
+  function audioLoop() {
+    analyser.getByteFrequencyData(data);
+    const avg = data.reduce((a, b) => a + b) / data.length;
+
+    document.documentElement.style.setProperty(
+      "--audio-glow",
+      `${Math.min(avg / 80, 1)}`
+    );
+
+    requestAnimationFrame(audioLoop);
+  }
+
+  audioLoop();
+}).catch(() => {
+  console.log("Mic access denied — audio effects disabled.");
+});
+/* 🧬 THREE.JS DEPTH FIELD */
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000);
+camera.position.z = 60;
+
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(innerWidth, innerHeight);
+document.getElementById("three-bg").appendChild(renderer.domElement);
+
+const geometry = new THREE.BufferGeometry();
+const points = [];
+
+for (let i = 0; i < 800; i++) {
+  points.push(
+    (Math.random() - 0.5) * 300,
+    (Math.random() - 0.5) * 300,
+    (Math.random() - 0.5) * 300
+  );
+}
+
+geometry.setAttribute("position", new THREE.Float32BufferAttribute(points, 3));
+const material = new THREE.PointsMaterial({
+  color: 0x7dd3fc,
+  size: 1.2,
+  transparent: true,
+  opacity: 0.5
+});
+
+const stars = new THREE.Points(geometry, material);
+scene.add(stars);
+
+function animate3D() {
+  stars.rotation.y += 0.0006;
+  stars.rotation.x += 0.0003;
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate3D);
+}
+animate3D();
+/* 📱 GYRO PARALLAX */
+if (window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", (e) => {
+    const x = e.gamma || 0;
+    const y = e.beta || 0;
+
+    profile.style.transform = `
+      translate(${x * 0.4}px, ${y * 0.4}px)
+    `;
+  });
+}
