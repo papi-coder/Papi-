@@ -283,11 +283,7 @@ if (profile) {
     profile.style.transform = "translate(0,0) rotateX(0) rotateY(0)";
   });
 
-  // 🎥 Scroll-based Parallax Depth
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    profile.style.transform += ` translateY(${scrollY * 0.04}px)`;
-  });
+ 
 }
 tsParticles.load("particles-js", {
   fullScreen: { enable: false },
