@@ -709,3 +709,17 @@ body {
   align-items: center;
   will-change: transform; /* optimize for scroll animation */
 }
+.certificate-card img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.certificate-card h4 {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.certificate-card p {
+  color: #555;
+}
