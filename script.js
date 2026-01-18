@@ -200,3 +200,14 @@ function arcLoop() {
   requestAnimationFrame(arcLoop);
 }
 arcLoop();
+let lastScroll = 0;
+let currentTranslate = 0;
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const delta = scrollY - lastScroll;
+  lastScroll = scrollY;
+
+  currentTranslate += delta * 0.1; // smooth movement
+  profileFX.style.transform = `translateY(${currentTranslate}px) rotate(${scrollY * 0.05}deg)`;
+});
